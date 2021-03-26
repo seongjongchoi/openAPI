@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function CBSAlert() {
+        alert("pressed!!");
+        var xhr = new XMLHttpRequest();
+        var url =
+          "http://apis.data.go.kr/1741000/DisasterMsg2/getDisasterMsgList"; /*URL*/
+        let sKey =
+          "aN2aOKkivRPAL7ZlAtz6BKj%2FQcSYUvEvZVRk80qX0cTYMUEUAiGIx%2BslDNoLo1feNuxD6cSBgSaMO3B6tp%2FZvw%3D%3D";
+        var queryParams =
+          "?" + encodeURIComponent("ServiceKey") + "=" + sKey; /*Service Key*/
+        queryParams +=
+          "&" +
+          encodeURIComponent("pageNo") +
+          "=" +
+          encodeURIComponent("1"); /**/
+        queryParams +=
+          "&" +
+          encodeURIComponent("numOfRows") +
+          "=" +
+          encodeURIComponent("10"); /**/
+        queryParams +=
+          "&" +
+          encodeURIComponent("type") +
+          "=" +
+          encodeURIComponent("xml"); /**/
+        queryParams +=
+          "&" + encodeURIComponent("flag") + "=" + encodeURIComponent("Y"); /**/
+        xhr.open("GET", url + queryParams);
+        xhr.onreadystatechange = function () {
+          if (this.readyState == 4) {
+            alert(
+              "Status: " +
+                this.status +
+                "nHeaders: " +
+                JSON.stringify(this.getAllResponseHeaders()) +
+                "nBody: " +
+                this.responseText
+            );
+            //xml Tag가 지워져서 나온다.
+            // document.getElementById("list").innerHTML =
+            //   "Status: " +
+            //   this.status +
+            //   "nHeaders: " +
+            //   JSON.stringify(this.getAllResponseHeaders()) +
+            //   "nBody: " +
+            //   this.responseText;
+          }
+        };
+
+        xhr.send();
+      }
+    </script>
+  </head>
+  <body>
+    <div id="demo">
+      <h2>The XMLHttpRequest Object</h2>
+      <button type="button" onclick="CBSAlert()">Change Content</button>
+    </div>
+    <dev id="list"></dev>
+  </body>
+</html>
