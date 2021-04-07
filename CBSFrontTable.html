@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function printAlert() {
+        alert("pressed!! 이 창을 닫은 후 잠시 기다리세요");
+        let xhr = new XMLHttpRequest();
+        let url =
+          "http://apis.data.go.kr/1741000/DisasterMsg2/getDisasterMsgList"; /*URL*/
+        let sKey =
+          "aN2aOKkivRPAL7ZlAtz6BKj%2FQcSYUvEvZVRk80qX0cTYMUEUAiGIx%2BslDNoLo1feNuxD6cSBgSaMO3B6tp%2FZvw%3D%3D";
+        let queryParams =
+          "?" + encodeURIComponent("ServiceKey") + "=" + sKey; /*Service Key*/
+        queryParams +=
+          "&" +
+          encodeURIComponent("pageNo") +
+          "=" +
+          encodeURIComponent("1"); /**/
+        queryParams +=
+          "&" +
+          encodeURIComponent("numOfRows") +
+          "=" +
+          encodeURIComponent("10"); /**/
+        queryParams +=
+          "&" +
+          encodeURIComponent("type") +
+          "=" +
+          encodeURIComponent("xml"); /**/
+        queryParams +=
+          "&" + encodeURIComponent("flag") + "=" + encodeURIComponent("Y"); /**/
+        xhr.open("GET", url + queryParams);
+        xhr.onreadystatechange = function () {
+          if (this.readyState == 4) {
+            //alert 창에 xml문서를 보여준다.
+            // alert(
+            //   "Status: " +
+            //     this.status +
+            //     "nHeaders: " +
+            //     JSON.stringify(this.getAllResponseHeaders()) +
+            //     "nBody: " +
+            //     this.responseText
+            // );
+
+            //브라우저 창으로 출력. xml Tag는 브라으저가 이해하지 못하기 때문에  지워져서 나온다.
+            //document.getElementById("list").innerHTML = this.responseText;
+            makeTable(this);
+          }
+        };
+
+        xhr.send();
+      }
+      function makeTable(xml) {
+        let i;
+        let xmlDoc = xml.responseXML;
+        let table = "<tr><th>날짜</th><th>재난문자</th></tr>";
+        let x = xmlDoc.getElementsByTagName("row");
+        for (i = 0; i < x.length; i++) {
+          table +=
+            "<tr><td>" +
+            x[i].getElementsByTagName("create_date")[0].childNodes[0]
+              .nodeValue +
+            "</td><td>" +
+            x[i].getElementsByTagName("msg")[0].childNodes[0].nodeValue +
+            "</td></tr>";
+        }
+        document.getElementById("list").innerHTML = table;
+      }
+    </script>
+  </head>
+  <body>
+    <div id="demo">
+      <h2>재난문자 발령 현황</h2>
+      <button type="button" onclick="printAlert()">
+        재난문자를 받으려면 이 버튼을 누르세요
+      </button>
+    </div>
+    <table id="list" border="1"></table>
+  </body>
+</html>
