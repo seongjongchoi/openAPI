@@ -7,13 +7,13 @@
     <title>Document</title>
     <script>
       function printAlert() {
-        alert("pressed!!");
-        var xhr = new XMLHttpRequest();
-        var url =
+        alert("pressed!! 이 창을 닫은 후 잠시 기다리세요");
+        let xhr = new XMLHttpRequest();
+        let url =
           "http://apis.data.go.kr/1741000/DisasterMsg2/getDisasterMsgList"; /*URL*/
         let sKey =
           "aN2aOKkivRPAL7ZlAtz6BKj%2FQcSYUvEvZVRk80qX0cTYMUEUAiGIx%2BslDNoLo1feNuxD6cSBgSaMO3B6tp%2FZvw%3D%3D";
-        var queryParams =
+        let queryParams =
           "?" + encodeURIComponent("ServiceKey") + "=" + sKey; /*Service Key*/
         queryParams +=
           "&" +
@@ -35,6 +35,7 @@
         xhr.open("GET", url + queryParams);
         xhr.onreadystatechange = function () {
           if (this.readyState == 4) {
+            //alert 창에 xml문서를 보여준다.
             alert(
               "Status: " +
                 this.status +
@@ -43,14 +44,9 @@
                 "nBody: " +
                 this.responseText
             );
-            //xml Tag가 지워져서 나온다.
-            // document.getElementById("list").innerHTML =
-            //   "Status: " +
-            //   this.status +
-            //   "nHeaders: " +
-            //   JSON.stringify(this.getAllResponseHeaders()) +
-            //   "nBody: " +
-            //   this.responseText;
+
+            //브라우저 창으로 출력. xml Tag는 브라으저가 이해하지 못하기 때문에  지워져서 나온다.
+            document.getElementById("list").innerHTML = this.responseText;
           }
         };
 
@@ -60,8 +56,10 @@
   </head>
   <body>
     <div id="demo">
-      <h2>The XMLHttpRequest Object</h2>
-      <button type="button" onclick="printAlert()">Change Content</button>
+      <h2>재난문자 발령 현황</h2>
+      <button type="button" onclick="printAlert()">
+        재난문자를 받으려면 이 버튼을 누르세요
+      </button>
     </div>
     <dev id="list"></dev>
   </body>
