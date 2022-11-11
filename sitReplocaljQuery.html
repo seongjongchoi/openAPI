@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      function makeTable(xmlDoc) {
+        let i;
+        //let xmlDoc = xml.responseXML;
+        let table = "<tr><th>메시지ID</th><th>상황보고</th></tr>";
+        let x = xmlDoc.getElementsByTagName("row");
+        for (i = 0; i < x.length; i++) {
+          table +=
+            "<tr><td>" +
+            x[i].getElementsByTagName("msg_id")[0].childNodes[0].nodeValue +
+            "</td><td>" +
+            x[i].getElementsByTagName("cnts1")[0].childNodes[0].nodeValue +
+            "</td></tr>";
+        }
+        //document.getElementById("list").innerHTML = table;
+        $("#list").html(table);
+      }
+    </script>
+    <script>
+      $(document).ready(function () {
+        $("button").click(function () {
+          $.get("sitRep.xml", function (data, status, xhr) {
+            //data = xhr.responseXML 즉 data는 get한 xml파일을 객체화한  "xml객체"이다.
+            //alert("Data: " + data + "\nStatus: " + status);
+            //$("#xmldump").text(xhr.responseText);
+            makeTable(data); //
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="demo">
+      <h2>재난문자 발령 현황</h2>
+      <button>재난문자를 받으려면 이 버튼을 누르세요</button>
+    </div>
+    <div id="xmldump">xmldump</div>
+    <table id="list" border="1"></table>
+  </body>
+</html>

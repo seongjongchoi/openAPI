@@ -2,6 +2,7 @@
 //재난문자방송 발령현황
 
 var request = require("request");
+var fs = require("fs");
 
 var url = "http://apis.data.go.kr/1741000/DisasterMsg2/getDisasterMsgList";
 let sKey =
@@ -23,12 +24,15 @@ queryParams +=
 request(
   {
     url: url + queryParams,
-    //   url: urlTest + qPram,
     method: "GET",
   },
   function (error, response, body) {
     console.log("Status", response.statusCode);
     console.log("Headers", JSON.stringify(response.headers));
     console.log("Reponse received", body);
+    fs.writeFile("alert.xml", body, function (err) {
+      if (err) throw err;
+      console.log("Saved!!!");
+    });
   }
 );

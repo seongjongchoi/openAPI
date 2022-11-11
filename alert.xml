@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DisasterMsg>
+  <head>
+    <totalCount>81629</totalCount>
+    <numOfRows>10</numOfRows>
+    <pageNo>1</pageNo>
+    <type>XML</type>
+    <RESULT>
+      <resultCode>INFO-0</resultCode>
+      <resultMsg>정상</resultMsg>
+    </RESULT>
+  </head>
+  <row>
+    <create_date>2021/04/14 14:53:19</create_date>
+    <location_id>226</location_id>
+    <location_name>충청남도 당진시</location_name>
+    <md101_sn>102130</md101_sn>
+    <msg>[당진시청]4월14일(수)14:00기준 확진자2명 발생(4/13 14시이후)/총 확진자340명 당진시 접촉자 미파악동선 홈페이지 참고바랍니다 vo.la/LYzlJ</msg>
+    <send_platform>cbs</send_platform>
+  </row>
+  <row>
+    <create_date>2021/04/14 14:31:41</create_date>
+    <location_id>54</location_id>
+    <location_name>경상남도 거제시</location_name>
+    <md101_sn>102129</md101_sn>
+    <msg>[거제시청] 4월 14일 14시 기준, 확진자 1명 발생(거제 484번, 4월 13일 14시 이후 발생)/자세한 내용은 거제시 홈페이지를 참고바랍니다.</msg>
+    <send_platform>cbs</send_platform>
+  </row>
+  <row>
+    <create_date>2021/04/14 14:24:10</create_date>
+    <location_id>28</location_id>
+    <location_name>경기도 군포시</location_name>
+    <md101_sn>102128</md101_sn>
+    <msg>[군포시청] 4월14일14시 기준 전일 대비 확진자 추가 12명 발생, 상세내용은 군포시 홈페이지, SNS 등 참조바랍니다. pf.kakao.com/_eDSsxb</msg>
+    <send_platform>cbs</send_platform>
+  </row>
+  <row>
+    <create_date>2021/04/14 14:19:28</create_date>
+    <location_id>215</location_id>
+    <location_name>전라북도 정읍시</location_name>
+    <md101_sn>102127</md101_sn>
+    <msg>[정읍시청3]4.8(목) ~ 4.11(일) 금성머리방(시기동) 방문자 및 유증상자는 보건소 선별진료소에서 즉시 검사 바랍니다.(063-539-6734~7)</msg>
+    <send_platform>cbs</send_platform>
+  </row>
+  <row>
+    <create_date>2021/04/14 14:18:29</create_date>
+    <location_id>215</location_id>
+    <location_name>전라북도 정읍시</location_name>
+    <md101_sn>102126</md101_sn>
+    <msg>[정읍시청2] blog.naver.com/jeongeupnews/222305604589 /3.31(수)~4.12(월) 금성주단(시기동)방문자는 즉시 검사바랍니다.</msg>
+    <send_platform>cbs</send_platform>
+  </row>
+  <row>
+    <create_date>2021/04/14 14:18:06</create_date>
+    <location_id>215</location_id>
+    <location_name>전라북도 정읍시</location_name>
+    <md101_sn>102125</md101_sn>
+    <msg>[정읍시청1]4.14일(수) 13시 기준 확진자 4명(정읍 63~66) 추가 발생 / 4월 총 누적 확진자 16명(정읍 51~66)/정읍시블로그 참고 바랍니다.</msg>
+    <send_platform>cbs</send_platform>
+  </row>
+  <row>
+    <create_date>2021/04/14 14:08:30</create_date>
+    <location_id>61</location_id>
+    <location_name>경상남도 사천시</location_name>
+    <md101_sn>102124</md101_sn>
+    <msg>[사천시청]4.14(수) 14시 기준 확진자 4명(유증상 검사 1, 확진자 접촉자 1, 외국인 입국 2) 발생하여 동선 및 역학조사 진행중입니다.</msg>
+    <send_platform>cbs</send_platform>
+  </row>
+  <row>
+    <create_date>2021/04/14 13:55:45</create_date>
+    <location_id>122</location_id>
+    <location_name>부산광역시 기장군</location_name>
+    <md101_sn>102123</md101_sn>
+    <msg>[기장군] 기장709-2854,5123 장안709-2492,5172 정관709-5244,5246 일광709-5215,5205 철마709-5272,2791</msg>
+    <send_platform>cbs</send_platform>
+  </row>
+  <row>
+    <create_date>2021/04/14 13:55:30</create_date>
+    <location_id>122</location_id>
+    <location_name>부산광역시 기장군</location_name>
+    <md101_sn>102122</md101_sn>
+    <msg>[기장군] 5월초 백신접종 예정이나 백신수급일정에 따라 일정 변동 가능하고, 어르신별 접종날짜 및 시간은 백신 수급상황 등을 고려하여 별도로 안내</msg>
+    <send_platform>cbs</send_platform>
+  </row>
+  <row>
+    <create_date>2021/04/14 13:55:13</create_date>
+    <location_id>122</location_id>
+    <location_name>부산광역시 기장군</location_name>
+    <md101_sn>102121</md101_sn>
+    <msg>[기장군] 기장군 거주 75세 이상(1946.12.31.이전 출생) 어르신은 4.16.까지 읍·면행정복지센터에서 백신무료접종을 신청하세요.</msg>
+    <send_platform>cbs</send_platform>
+  </row>
+</DisasterMsg>
+
